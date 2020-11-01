@@ -1,11 +1,16 @@
 package com.vianneydiris.kinomap_android.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * The type Url.
  */
 public class Url {
+    @SerializedName("left")
     private String left;
+    @SerializedName("right")
     private String right;
+    @SerializedName("size50x50")
     private String size50x50;
 
     /**

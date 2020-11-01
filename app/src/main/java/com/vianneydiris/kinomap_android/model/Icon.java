@@ -1,11 +1,16 @@
 package com.vianneydiris.kinomap_android.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * The type Icon.
  */
 public class Icon {
+    @SerializedName("anchor")
     private Anchor anchor;
+    @SerializedName("size")
     private Size size;
+    @SerializedName("url")
     private Url url;
 
     /**

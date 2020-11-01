@@ -1,10 +1,14 @@
 package com.vianneydiris.kinomap_android.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * The type Anchor.
  */
 public class Anchor {
+    @SerializedName("x")
     private int x;
+    @SerializedName("y")
     private int y;
 
     /**

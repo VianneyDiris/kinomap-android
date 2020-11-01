@@ -1,10 +1,14 @@
 package com.vianneydiris.kinomap_android.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * The type Size.
  */
 public class Size {
+    @SerializedName("height")
     private int height;
+    @SerializedName("width")
     private int width;
 
     /**

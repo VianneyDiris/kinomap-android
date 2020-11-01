@@ -1,12 +1,18 @@
 package com.vianneydiris.kinomap_android.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * The type Vehicle.
  */
 public class Vehicle {
+    @SerializedName("id")
     private Long id;
+    @SerializedName("name")
     private String name;
+    @SerializedName("training")
     private String training;
+    @SerializedName("icon")
     private Icon icon;
 
     /**
