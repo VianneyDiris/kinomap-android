@@ -1,7 +1,7 @@
 package com.vianneydiris.kinomap_android.service;
 
-import com.vianneydiris.kinomap_android.model.VehicleList;
 
+import com.vianneydiris.kinomap_android.model.VehicleList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

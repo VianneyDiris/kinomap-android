@@ -1,23 +1,45 @@
 package com.vianneydiris.kinomap_android.model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class VehicleList {
-    @SerializedName("vehicleList")
-    private List<Vehicle> vehicles;
 
-    public VehicleList() {
-        vehicles = new ArrayList<>();
+    @SerializedName("status")
+    @Expose
+    private String status;
+    @SerializedName("response")
+    @Expose
+    private List<Vehicle> response = null;
+    @SerializedName("unlockedContent")
+    @Expose
+    private List<Object> unlockedContent = null;
+
+    public String getStatus() {
+        return status;
     }
 
-    public List<Vehicle> getVehicles() {
-        return vehicles;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public void setVehicles(List<Vehicle> vehicles) {
-        this.vehicles = vehicles;
+    public List<Vehicle> getResponse() {
+        return response;
     }
+
+    public void setResponse(List<Vehicle> response) {
+        this.response = response;
+    }
+
+    public List<Object> getUnlockedContent() {
+        return unlockedContent;
+    }
+
+    public void setUnlockedContent(List<Object> unlockedContent) {
+        this.unlockedContent = unlockedContent;
+    }
+
 }

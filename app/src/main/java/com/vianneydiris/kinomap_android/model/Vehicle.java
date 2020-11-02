@@ -1,5 +1,6 @@
 package com.vianneydiris.kinomap_android.model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -7,114 +8,47 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Vehicle {
     @SerializedName("id")
-    private Long id;
+    @Expose
+    private Integer id;
     @SerializedName("name")
+    @Expose
     private String name;
     @SerializedName("training")
-    private String training;
+    @Expose
+    private Object training;
     @SerializedName("icon")
+    @Expose
     private Icon icon;
 
-    /**
-     * Instantiates a new Vehicle.
-     */
-    public Vehicle() {
-    }
-
-    /**
-     * Instantiates a new Vehicle.
-     *
-     * @param id       the id
-     * @param name     the name
-     * @param training the training
-     * @param icon     the icon
-     */
-    public Vehicle(Long id, String name, String training, Icon icon) {
-        this.id = id;
-        this.name = name;
-        this.training = training;
-        this.icon = icon;
-    }
-
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    /**
-     * Gets name.
-     *
-     * @return the name
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Sets name.
-     *
-     * @param name the name
-     */
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * Gets training.
-     *
-     * @return the training
-     */
-    public String getTraining() {
+    public Object getTraining() {
         return training;
     }
 
-    /**
-     * Sets training.
-     *
-     * @param training the training
-     */
-    public void setTraining(String training) {
+    public void setTraining(Object training) {
         this.training = training;
     }
 
-    /**
-     * Gets icon.
-     *
-     * @return the icon
-     */
     public Icon getIcon() {
         return icon;
     }
 
-    /**
-     * Sets icon.
-     *
-     * @param icon the icon
-     */
     public void setIcon(Icon icon) {
         this.icon = icon;
-    }
-
-    @Override
-    public String toString() {
-        return "Vehicle{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", training='" + training + '\'' +
-                ", icon=" + icon +
-                '}';
     }
 }

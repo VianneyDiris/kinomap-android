@@ -9,8 +9,6 @@ import com.vianneydiris.kinomap_android.model.VehicleList;
 import com.vianneydiris.kinomap_android.service.RetrofitClient;
 import com.vianneydiris.kinomap_android.service.VehicleService;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,10 +33,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<VehicleList> call, Response<VehicleList> response) {
                 if(response.isSuccessful()) {
-                    VehicleList changesList = response.body();
-                    for (int i=0; i<changesList.getVehicles().size(); i++) {
-                        System.out.println(changesList.getVehicles().get(i));
-                    }
+                    VehicleList vehicleList = response.body();
+                    System.out.println(vehicleList.getStatus());
+                   /* List<Vehicle> vehicles = vehicleResponse.getVehicles();
+                    for (int i=0; i<vehicles.size(); i++) {
+                        System.out.println(vehicles.get(i));
+                    }*/
                 } else {
                     System.out.println(response.errorBody());
                 }
