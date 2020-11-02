@@ -51,4 +51,14 @@ public class Vehicle {
     public void setIcon(Icon icon) {
         this.icon = icon;
     }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", training=" + training +
+                ", icon=" + icon +
+                '}';
+    }
 }
