@@ -14,9 +14,6 @@ public class VehicleList {
     @SerializedName("response")
     @Expose
     private List<Vehicle> response = null;
-    @SerializedName("unlockedContent")
-    @Expose
-    private List<Object> unlockedContent = null;
 
     public String getStatus() {
         return status;
@@ -32,14 +29,6 @@ public class VehicleList {
 
     public void setResponse(List<Vehicle> response) {
         this.response = response;
-    }
-
-    public List<Object> getUnlockedContent() {
-        return unlockedContent;
-    }
-
-    public void setUnlockedContent(List<Object> unlockedContent) {
-        this.unlockedContent = unlockedContent;
     }
 
 }
