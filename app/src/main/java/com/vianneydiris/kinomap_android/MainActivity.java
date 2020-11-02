@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.vianneydiris.kinomap_android.model.Vehicle;
+import com.vianneydiris.kinomap_android.model.VehicleList;
 import com.vianneydiris.kinomap_android.service.RetrofitClient;
 import com.vianneydiris.kinomap_android.service.VehicleService;
 
@@ -26,17 +27,17 @@ public class MainActivity extends AppCompatActivity {
 
         //Create a handler for the RetrofitInstance interface//
         VehicleService service = RetrofitClient.getRetrofitInstance().create(VehicleService.class);
-        Call<List<Vehicle>> call = service.getAllVehicles();
+        Call<VehicleList> call = service.getAllVehicles();
 
         //Execute the request asynchronously//
-        call.enqueue(new Callback<List<Vehicle>>() {
+        call.enqueue(new Callback<VehicleList>() {
 
             @Override
-            public void onResponse(Call<List<Vehicle>> call, Response<List<Vehicle>> response) {
+            public void onResponse(Call<VehicleList> call, Response<VehicleList> response) {
                 if(response.isSuccessful()) {
-                    List<Vehicle> changesList = response.body();
-                    for (int i=0; i<changesList.size(); i++) {
-                        System.out.println(changesList.get(i));
+                    VehicleList changesList = response.body();
+                    for (int i=0; i<changesList.getVehicles().size(); i++) {
+                        System.out.println(changesList.getVehicles().get(i));
                     }
                 } else {
                     System.out.println(response.errorBody());
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Vehicle>> call, Throwable t) {
+            public void onFailure(Call<VehicleList> call, Throwable t) {
                 t.printStackTrace();
             }
         });
