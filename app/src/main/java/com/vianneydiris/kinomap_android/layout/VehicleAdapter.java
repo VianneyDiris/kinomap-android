@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.vianneydiris.kinomap_android.R;
 import com.vianneydiris.kinomap_android.model.Vehicle;
 
@@ -30,20 +31,21 @@ public class VehicleAdapter  extends ArrayAdapter<Vehicle> {
         if(viewHolder == null){
             viewHolder = new VehicleViewHolder();
             viewHolder.name = (TextView) convertView.findViewById(R.id.name);
-         //   viewHolder.icon = (ImageView) convertView.findViewById(R.id.icon);
+            viewHolder.icon = (ImageView) convertView.findViewById(R.id.icon);
             convertView.setTag(viewHolder);
         }
 
         Vehicle vehicle = getItem(position);
         viewHolder.name.setText(vehicle.getName());
-        //viewHolder.icon.setImageIcon(vehicle.getIcon().getUrl().getSize50x50());
+        Picasso.get().load(vehicle.getIcon().getUrl().getSize50x50()).into( viewHolder.icon);
+      //  viewHolder.icon.setImageIcon(vehicle.getIcon().getUrl().getSize50x50());
 
         return convertView;
     }
 
     private class VehicleViewHolder{
         public TextView name;
-     //   public ImageView icon;
+        public ImageView icon;
 
     }
 }
