@@ -24,14 +24,6 @@ import retrofit2.Response;
  */
 public class MainActivity extends AppCompatActivity {
     private ListView mListView;
-    private List<Vehicle> vehicleList2 = new ArrayList<>();
-    private String[] prenoms = new String[]{
-            "Antoine", "Benoit", "Cyril", "David", "Eloise", "Florent",
-            "Gerard", "Hugo", "Ingrid", "Jonathan", "Kevin", "Logan",
-            "Mathieu", "Noemie", "Olivia", "Philippe", "Quentin", "Romain",
-            "Sophie", "Tristan", "Ulric", "Vincent", "Willy", "Xavier",
-            "Yann", "Zoé"
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
