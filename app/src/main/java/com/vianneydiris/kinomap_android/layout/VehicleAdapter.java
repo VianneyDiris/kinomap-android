@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -15,7 +14,7 @@ import com.vianneydiris.kinomap_android.model.Vehicle;
 
 import java.util.List;
 
-public class VehicleAdapter  extends ArrayAdapter<Vehicle> {
+public class VehicleAdapter extends ArrayAdapter<Vehicle> {
     private VehicleViewHolder viewHolder;
 
     public VehicleAdapter(Context context, List<Vehicle> vehicles) {
@@ -25,12 +24,12 @@ public class VehicleAdapter  extends ArrayAdapter<Vehicle> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(convertView == null){
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_vehicle,parent, false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_vehicle, parent, false);
         }
 
         viewHolder = (VehicleViewHolder) convertView.getTag();
-        if(viewHolder == null){
+        if (viewHolder == null) {
             viewHolder = new VehicleViewHolder();
             viewHolder.name = (TextView) convertView.findViewById(R.id.name);
             viewHolder.icon = (ImageView) convertView.findViewById(R.id.icon);
@@ -45,13 +44,13 @@ public class VehicleAdapter  extends ArrayAdapter<Vehicle> {
         VehicleViewHolder finalViewHolder = viewHolder;
         convertView.setOnClickListener(v -> {
             System.out.println(vehicle.getId());
-            viewHolder.id.setText(Integer.toString(vehicle.getId()));
+            ((VehicleViewHolder)v.getTag()).id.setText(Integer.toString(vehicle.getId()));
         });
 
         return convertView;
     }
 
-    private class VehicleViewHolder{
+    private class VehicleViewHolder {
         public TextView name;
         public ImageView icon;
         public TextView id;

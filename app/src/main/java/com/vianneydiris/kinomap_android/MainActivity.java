@@ -5,7 +5,6 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.vianneydiris.kinomap_android.model.MyResponse;
 import com.vianneydiris.kinomap_android.layout.VehicleAdapter;
 import com.vianneydiris.kinomap_android.model.MyResponse;
 import com.vianneydiris.kinomap_android.model.Vehicle;
@@ -13,9 +12,6 @@ import com.vianneydiris.kinomap_android.model.VehicleList;
 import com.vianneydiris.kinomap_android.service.RetrofitClient;
 import com.vianneydiris.kinomap_android.service.VehicleService;
 
-import java.util.List;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -38,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Create a handler for the RetrofitInstance interface//
         VehicleService service = RetrofitClient.getRetrofitInstance().create(VehicleService.class);
-        Call<MyResponse> call = service.getAllVehicles();;
+        Call<MyResponse> call = service.getAllVehicles();
+        ;
 
         //Execute the request asynchronously//
         call.enqueue(new Callback<MyResponse>() {
