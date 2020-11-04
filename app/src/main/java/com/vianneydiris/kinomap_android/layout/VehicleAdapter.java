@@ -45,7 +45,7 @@ public class VehicleAdapter  extends ArrayAdapter<Vehicle> {
         VehicleViewHolder finalViewHolder = viewHolder;
         convertView.setOnClickListener(v -> {
             System.out.println(vehicle.getId());
-            viewHolder.id.setText(Integer.toString(vehicle.getId()));
+            ((VehicleViewHolder)v.getTag()).id.setText(Integer.toString(vehicle.getId()));
         });
 
         return convertView;
