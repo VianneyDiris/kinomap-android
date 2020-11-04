@@ -24,11 +24,11 @@ http://api.kinomap.com/vehicle/list?icon=1&lang=en-gb&forceStandard=1&outputForm
 
 ## Temps estimé :
 
-Le projet a débuté le dimanche 01/11/2020 à 9h et n'est pas encore fini. La branche main se termine le lundi 02/11/2020 à 11h. 
-Temps passé dessus : 10h.
+Le projet a débuté le dimanche 01/11/2020 à 9h et n'est pas encore fini. La branche main se termine le mercredi 04/11/2020 à 11h. 
+Temps passé dessus : 16h.
 
-## Problèmes rencontrés :
+## Verdict :
 
-Je n'ai pas réussi à intercepter la liste de véhicule au niveau de l'API. Je suis tombé sur une erreur "java.lang.IllegalStateException: Expected BEGIN_ARRAY but was BEGIN_OBJECT".
-Après avoir vu sur StackkOverflow, cette erreur est lié aux objets mais je ne vois pas ce qui cloche.
-Si vous avez la solution, j'aimerai la connaitre.
+Premier gros projet Android, même si celui-ci est juste un test technique, j'ai apprécié apprendre un peu cet univers.
+
+Je remercie Alexy Peinte du temps qu'il a consacré pour m'aider.
